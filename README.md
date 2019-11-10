@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+This project was created 9/11/2019.
 
 ### Project Title
-Replace the Project Title
+Version Control
 
 ### Description
-Describe what your project is about and what it does
+The project involved using Git and GitHub to simulate a realistic workflow to refactor the BikeShare project (project 2 for the Programming for Data Science Nanodegree program).
 
 ### Files used
-Include the files used
+The following csv files were used:
+* chicago.csv
+* new_york_city.csv
+* washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Appreciation to the Udacity team and more especially the instructors for the Programming for Data Science Nanodegree program. Also John Elder from JohnElder.com for his engaging educational material.

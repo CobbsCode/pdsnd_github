@@ -7,7 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
-    """ 
+    """
     Asks user to specify a city, month, and day to analyze.
 
     Returns:
@@ -60,32 +60,32 @@ def load_data(city, month, day):
     """
     # TO DO: load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
-    
+
     # TO DO: convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-    
+
     # TO DO: extract month and day of the week from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-    
+
     # TO DO: filter by month if applicable
     if month != 'all':
-    
+
         # TO DO: use the index of the months list to get the corresponding int
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-        
+
         # TO DO: filter by month to create the new dataframe
         df = df[df['month'] == month]
-        
+
     # TO DO: filter by day of week if applicable
     if day != 'all':
-        
+
         # TO DO: filter by day of week to create the new dataframe
         df = df[df['day_of_week'] == day.title()]
-        
-    
-    return df 
+
+
+    return df
 
 
 def time_stats(df):
@@ -176,24 +176,24 @@ def user_stats(df):
         print('The earliest year of birth: {}'.format(earliest_year))
     except KeyError:
         print('The earliest year of birth: NULL')
-        
-    try:    
+
+    try:
         recent_year = df['Birth Year'].max()
         print('The most recent year of birth: {}'.format(recent_year))
     except KeyError:
         print('The most recent year of birth: NULL')
-    
+
     try:
         common_year = df['Birth Year'].value_counts().idxmax()
         print('The most common year of birth: {}'.format(common_year))
     except KeyError:
         print('The most common year of birth: NULL')
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 
-    
+
 
 def main():
     while True:
@@ -204,12 +204,12 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
-        
-        """Displaying five lines of data if the user specifies that they would like to. If so, the loop continues until the user says no"""
-        
+
+        #Displays five lines of data if the user specifies that they would like to view. If so, the loop continues until the user says no
+
         display_data = input('Would you like to see raw data?\n Enter Yes or No\n')
         start_data = 0
-    
+
         while True:
             if display_data.lower() != 'no':
                 print(df.iloc[start_data : start_data + 5])

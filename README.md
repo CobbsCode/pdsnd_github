@@ -14,4 +14,4 @@ The following csv files were used:
 * washington.csv
 
 ### Credits
-Appreciation to the Udacity team and more especially the instructors for the Programming for Data Science Nanodegree program. Also John Elder from JohnElder.com for his engaging educational material.
+Appreciation to the Udacity team and more especially the instructors for the Programming for Data Science Nanodegree program. Also John Elder from JohnElder.com for his open and engaging educational material.
